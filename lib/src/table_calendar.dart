@@ -3,6 +3,7 @@
 
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
@@ -531,8 +532,8 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
               return dowCell;
             },
             dayBuilder: (context, day, focusedMonth) {
-              return GestureDetector(
-                behavior: widget.dayHitTestBehavior,
+              return InkWell(
+                //behavior: widget.dayHitTestBehavior,
                 onTap: () => _onDayTapped(day),
                 onLongPress: () => _onDayLongPressed(day),
                 child: _buildCell(day, focusedMonth),
